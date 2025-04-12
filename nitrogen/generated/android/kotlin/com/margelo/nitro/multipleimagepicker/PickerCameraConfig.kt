@@ -16,7 +16,12 @@ import com.margelo.nitro.core.*
  */
 @DoNotStrip
 @Keep
-data class PickerCameraConfig(
-  val cameraDevice: CameraDevice?,
-  val videoMaximumDuration: Double?
-)
+data class PickerCameraConfig
+  @DoNotStrip
+  @Keep
+  constructor(
+    val cameraDevice: CameraDevice?,
+    val videoMaximumDuration: Double?
+  ) {
+  /* main constructor */
+}

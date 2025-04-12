@@ -16,9 +16,14 @@ import com.margelo.nitro.core.*
  */
 @DoNotStrip
 @Keep
-data class PickerCropConfig(
-  val circle: Boolean?,
-  val ratio: Array<CropRatio>,
-  val defaultRatio: CropRatio?,
-  val freeStyle: Boolean?
-)
+data class PickerCropConfig
+  @DoNotStrip
+  @Keep
+  constructor(
+    val circle: Boolean?,
+    val ratio: Array<CropRatio>,
+    val defaultRatio: CropRatio?,
+    val freeStyle: Boolean?
+  ) {
+  /* main constructor */
+}

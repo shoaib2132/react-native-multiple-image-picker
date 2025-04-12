@@ -16,9 +16,14 @@ import com.margelo.nitro.core.*
  */
 @DoNotStrip
 @Keep
-data class MediaPreview(
-  val type: ResultType,
-  val path: String?,
-  val thumbnail: String?,
-  val localIdentifier: String?
-)
+data class MediaPreview
+  @DoNotStrip
+  @Keep
+  constructor(
+    val type: ResultType,
+    val path: String?,
+    val thumbnail: String?,
+    val localIdentifier: String?
+  ) {
+  /* main constructor */
+}

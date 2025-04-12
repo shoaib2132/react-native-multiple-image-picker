@@ -35,6 +35,7 @@ namespace margelo::nitro::multipleimagepicker {
     std::optional<double> videoMaximumDuration     SWIFT_PRIVATE;
 
   public:
+    PickerCameraConfig() = default;
     explicit PickerCameraConfig(std::optional<CameraDevice> cameraDevice, std::optional<double> videoMaximumDuration): cameraDevice(cameraDevice), videoMaximumDuration(videoMaximumDuration) {}
   };
 
@@ -46,7 +47,7 @@ namespace margelo::nitro {
 
   // C++ PickerCameraConfig <> JS PickerCameraConfig (object)
   template <>
-  struct JSIConverter<PickerCameraConfig> {
+  struct JSIConverter<PickerCameraConfig> final {
     static inline PickerCameraConfig fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return PickerCameraConfig(

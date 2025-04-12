@@ -49,6 +49,7 @@ namespace margelo::nitro::multipleimagepicker {
     std::optional<std::string> fileName     SWIFT_PRIVATE;
 
   public:
+    PickerResult() = default;
     explicit PickerResult(std::string localIdentifier, double width, double height, std::string mime, double size, std::optional<double> bucketId, std::optional<std::string> realPath, std::optional<std::string> parentFolderName, std::optional<double> creationDate, std::optional<bool> crop, std::string path, ResultType type, std::optional<double> duration, std::optional<std::string> thumbnail, std::optional<std::string> fileName): localIdentifier(localIdentifier), width(width), height(height), mime(mime), size(size), bucketId(bucketId), realPath(realPath), parentFolderName(parentFolderName), creationDate(creationDate), crop(crop), path(path), type(type), duration(duration), thumbnail(thumbnail), fileName(fileName) {}
   };
 
@@ -60,7 +61,7 @@ namespace margelo::nitro {
 
   // C++ PickerResult <> JS PickerResult (object)
   template <>
-  struct JSIConverter<PickerResult> {
+  struct JSIConverter<PickerResult> final {
     static inline PickerResult fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return PickerResult(

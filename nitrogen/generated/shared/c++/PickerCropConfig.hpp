@@ -38,6 +38,7 @@ namespace margelo::nitro::multipleimagepicker {
     std::optional<bool> freeStyle     SWIFT_PRIVATE;
 
   public:
+    PickerCropConfig() = default;
     explicit PickerCropConfig(std::optional<bool> circle, std::vector<CropRatio> ratio, std::optional<CropRatio> defaultRatio, std::optional<bool> freeStyle): circle(circle), ratio(ratio), defaultRatio(defaultRatio), freeStyle(freeStyle) {}
   };
 
@@ -49,7 +50,7 @@ namespace margelo::nitro {
 
   // C++ PickerCropConfig <> JS PickerCropConfig (object)
   template <>
-  struct JSIConverter<PickerCropConfig> {
+  struct JSIConverter<PickerCropConfig> final {
     static inline PickerCropConfig fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return PickerCropConfig(

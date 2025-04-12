@@ -41,6 +41,7 @@ namespace margelo::nitro::multipleimagepicker {
     std::optional<std::string> fileName     SWIFT_PRIVATE;
 
   public:
+    CameraResult() = default;
     explicit CameraResult(std::string path, ResultType type, std::optional<double> width, std::optional<double> height, std::optional<double> duration, std::optional<std::string> thumbnail, std::optional<std::string> fileName): path(path), type(type), width(width), height(height), duration(duration), thumbnail(thumbnail), fileName(fileName) {}
   };
 
@@ -52,7 +53,7 @@ namespace margelo::nitro {
 
   // C++ CameraResult <> JS CameraResult (object)
   template <>
-  struct JSIConverter<CameraResult> {
+  struct JSIConverter<CameraResult> final {
     static inline CameraResult fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return CameraResult(

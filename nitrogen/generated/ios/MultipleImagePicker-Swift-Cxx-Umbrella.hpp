@@ -87,7 +87,6 @@ namespace margelo::nitro::multipleimagepicker { enum class Theme; }
 // Common C++ types used in Swift
 #include <NitroModules/ArrayBufferHolder.hpp>
 #include <NitroModules/AnyMapHolder.hpp>
-#include <NitroModules/HybridContext.hpp>
 #include <NitroModules/RuntimeError.hpp>
 
 // Forward declarations of Swift defined types

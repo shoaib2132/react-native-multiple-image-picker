@@ -16,9 +16,14 @@ import com.margelo.nitro.core.*
  */
 @DoNotStrip
 @Keep
-data class Text(
-  val finish: String?,
-  val original: String?,
-  val preview: String?,
-  val edit: String?
-)
+data class Text
+  @DoNotStrip
+  @Keep
+  constructor(
+    val finish: String?,
+    val original: String?,
+    val preview: String?,
+    val edit: String?
+  ) {
+  /* main constructor */
+}

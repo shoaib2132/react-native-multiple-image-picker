@@ -36,6 +36,7 @@ namespace margelo::nitro::multipleimagepicker {
     std::optional<std::string> edit     SWIFT_PRIVATE;
 
   public:
+    Text() = default;
     explicit Text(std::optional<std::string> finish, std::optional<std::string> original, std::optional<std::string> preview, std::optional<std::string> edit): finish(finish), original(original), preview(preview), edit(edit) {}
   };
 
@@ -47,7 +48,7 @@ namespace margelo::nitro {
 
   // C++ Text <> JS Text (object)
   template <>
-  struct JSIConverter<Text> {
+  struct JSIConverter<Text> final {
     static inline Text fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return Text(

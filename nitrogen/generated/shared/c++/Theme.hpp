@@ -41,7 +41,7 @@ namespace margelo::nitro {
 
   // C++ Theme <> JS Theme (union)
   template <>
-  struct JSIConverter<Theme> {
+  struct JSIConverter<Theme> final {
     static inline Theme fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       std::string unionValue = JSIConverter<std::string>::fromJSI(runtime, arg);
       switch (hashString(unionValue.c_str(), unionValue.size())) {

@@ -41,7 +41,7 @@ namespace margelo::nitro {
 
   // C++ ResultType <> JS ResultType (union)
   template <>
-  struct JSIConverter<ResultType> {
+  struct JSIConverter<ResultType> final {
     static inline ResultType fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       std::string unionValue = JSIConverter<std::string>::fromJSI(runtime, arg);
       switch (hashString(unionValue.c_str(), unionValue.size())) {

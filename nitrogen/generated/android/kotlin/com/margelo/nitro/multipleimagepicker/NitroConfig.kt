@@ -16,31 +16,36 @@ import com.margelo.nitro.core.*
  */
 @DoNotStrip
 @Keep
-data class NitroConfig(
-  val mediaType: MediaType,
-  val selectedAssets: Array<PickerResult>,
-  val selectBoxStyle: SelectBoxStyle,
-  val selectMode: SelectMode,
-  val numberOfColumn: Double?,
-  val isPreview: Boolean?,
-  val primaryColor: Double?,
-  val allowSwipeToSelect: Boolean?,
-  val spacing: Double?,
-  val isHiddenPreviewButton: Boolean?,
-  val isHiddenOriginalButton: Boolean?,
-  val isShowPreviewList: Boolean?,
-  val allowHapticTouchPreview: Boolean?,
-  val allowedLimit: Boolean?,
-  val maxVideo: Double?,
-  val maxSelect: Double?,
-  val maxVideoDuration: Double?,
-  val minVideoDuration: Double?,
-  val maxFileSize: Double?,
-  val backgroundDark: Double?,
-  val crop: PickerCropConfig?,
-  val text: Text?,
-  val language: Language,
-  val theme: Theme,
-  val presentation: Presentation,
-  val camera: PickerCameraConfig?
-)
+data class NitroConfig
+  @DoNotStrip
+  @Keep
+  constructor(
+    val mediaType: MediaType,
+    val selectedAssets: Array<PickerResult>,
+    val selectBoxStyle: SelectBoxStyle,
+    val selectMode: SelectMode,
+    val numberOfColumn: Double?,
+    val isPreview: Boolean?,
+    val primaryColor: Double?,
+    val allowSwipeToSelect: Boolean?,
+    val spacing: Double?,
+    val isHiddenPreviewButton: Boolean?,
+    val isHiddenOriginalButton: Boolean?,
+    val isShowPreviewList: Boolean?,
+    val allowHapticTouchPreview: Boolean?,
+    val allowedLimit: Boolean?,
+    val maxVideo: Double?,
+    val maxSelect: Double?,
+    val maxVideoDuration: Double?,
+    val minVideoDuration: Double?,
+    val maxFileSize: Double?,
+    val backgroundDark: Double?,
+    val crop: PickerCropConfig?,
+    val text: Text?,
+    val language: Language,
+    val theme: Theme,
+    val presentation: Presentation,
+    val camera: PickerCameraConfig?
+  ) {
+  /* main constructor */
+}

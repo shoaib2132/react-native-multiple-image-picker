@@ -101,9 +101,9 @@ public class HybridMultipleImagePickerSpec_cxx {
 
   // Methods
   @inline(__always)
-  public func openPicker(config: NitroConfig, resolved: bridge.Func_void_std__vector_PickerResult_, rejected: bridge.Func_void_double) -> bridge.Result_void_ {
+  public final func openPicker(config: NitroConfig, resolved: bridge.Func_void_std__vector_PickerResult_, rejected: bridge.Func_void_double) -> bridge.Result_void_ {
     do {
-      try self.__implementation.openPicker(config: config, resolved: { () -> (([PickerResult]) -> Void) in
+      try self.__implementation.openPicker(config: config, resolved: { () -> ([PickerResult]) -> Void in
         let __wrappedFunction = bridge.wrap_Func_void_std__vector_PickerResult_(resolved)
         return { (__result: [PickerResult]) -> Void in
           __wrappedFunction.call({ () -> bridge.std__vector_PickerResult_ in
@@ -114,7 +114,7 @@ public class HybridMultipleImagePickerSpec_cxx {
             return __vector
           }())
         }
-      }(), rejected: { () -> ((Double) -> Void) in
+      }(), rejected: { () -> (Double) -> Void in
         let __wrappedFunction = bridge.wrap_Func_void_double(rejected)
         return { (__reject: Double) -> Void in
           __wrappedFunction.call(__reject)
@@ -128,14 +128,14 @@ public class HybridMultipleImagePickerSpec_cxx {
   }
   
   @inline(__always)
-  public func openCrop(image: std.string, config: NitroCropConfig, resolved: bridge.Func_void_CropResult, rejected: bridge.Func_void_double) -> bridge.Result_void_ {
+  public final func openCrop(image: std.string, config: NitroCropConfig, resolved: bridge.Func_void_CropResult, rejected: bridge.Func_void_double) -> bridge.Result_void_ {
     do {
-      try self.__implementation.openCrop(image: String(image), config: config, resolved: { () -> ((CropResult) -> Void) in
+      try self.__implementation.openCrop(image: String(image), config: config, resolved: { () -> (CropResult) -> Void in
         let __wrappedFunction = bridge.wrap_Func_void_CropResult(resolved)
         return { (__result: CropResult) -> Void in
           __wrappedFunction.call(__result)
         }
-      }(), rejected: { () -> ((Double) -> Void) in
+      }(), rejected: { () -> (Double) -> Void in
         let __wrappedFunction = bridge.wrap_Func_void_double(rejected)
         return { (__reject: Double) -> Void in
           __wrappedFunction.call(__reject)
@@ -149,9 +149,9 @@ public class HybridMultipleImagePickerSpec_cxx {
   }
   
   @inline(__always)
-  public func openPreview(media: bridge.std__vector_MediaPreview_, index: Double, config: NitroPreviewConfig, onLongPress: bridge.Func_void_double) -> bridge.Result_void_ {
+  public final func openPreview(media: bridge.std__vector_MediaPreview_, index: Double, config: NitroPreviewConfig, onLongPress: bridge.Func_void_double) -> bridge.Result_void_ {
     do {
-      try self.__implementation.openPreview(media: media.map({ __item in __item }), index: index, config: config, onLongPress: { () -> ((Double) -> Void) in
+      try self.__implementation.openPreview(media: media.map({ __item in __item }), index: index, config: config, onLongPress: { () -> (Double) -> Void in
         let __wrappedFunction = bridge.wrap_Func_void_double(onLongPress)
         return { (__index: Double) -> Void in
           __wrappedFunction.call(__index)
@@ -165,14 +165,14 @@ public class HybridMultipleImagePickerSpec_cxx {
   }
   
   @inline(__always)
-  public func openCamera(config: NitroCameraConfig, resolved: bridge.Func_void_CameraResult, rejected: bridge.Func_void_double) -> bridge.Result_void_ {
+  public final func openCamera(config: NitroCameraConfig, resolved: bridge.Func_void_CameraResult, rejected: bridge.Func_void_double) -> bridge.Result_void_ {
     do {
-      try self.__implementation.openCamera(config: config, resolved: { () -> ((CameraResult) -> Void) in
+      try self.__implementation.openCamera(config: config, resolved: { () -> (CameraResult) -> Void in
         let __wrappedFunction = bridge.wrap_Func_void_CameraResult(resolved)
         return { (__result: CameraResult) -> Void in
           __wrappedFunction.call(__result)
         }
-      }(), rejected: { () -> ((Double) -> Void) in
+      }(), rejected: { () -> (Double) -> Void in
         let __wrappedFunction = bridge.wrap_Func_void_double(rejected)
         return { (__reject: Double) -> Void in
           __wrappedFunction.call(__reject)

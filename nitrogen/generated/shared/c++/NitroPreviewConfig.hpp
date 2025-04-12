@@ -35,6 +35,7 @@ namespace margelo::nitro::multipleimagepicker {
     std::optional<bool> videoAutoPlay     SWIFT_PRIVATE;
 
   public:
+    NitroPreviewConfig() = default;
     explicit NitroPreviewConfig(Language language, std::optional<bool> videoAutoPlay): language(language), videoAutoPlay(videoAutoPlay) {}
   };
 
@@ -46,7 +47,7 @@ namespace margelo::nitro {
 
   // C++ NitroPreviewConfig <> JS NitroPreviewConfig (object)
   template <>
-  struct JSIConverter<NitroPreviewConfig> {
+  struct JSIConverter<NitroPreviewConfig> final {
     static inline NitroPreviewConfig fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return NitroPreviewConfig(

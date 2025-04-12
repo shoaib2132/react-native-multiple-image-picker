@@ -16,20 +16,25 @@ import com.margelo.nitro.core.*
  */
 @DoNotStrip
 @Keep
-data class PickerResult(
-  val localIdentifier: String,
-  val width: Double,
-  val height: Double,
-  val mime: String,
-  val size: Double,
-  val bucketId: Double?,
-  val realPath: String?,
-  val parentFolderName: String?,
-  val creationDate: Double?,
-  val crop: Boolean?,
-  val path: String,
-  val type: ResultType,
-  val duration: Double?,
-  val thumbnail: String?,
-  val fileName: String?
-)
+data class PickerResult
+  @DoNotStrip
+  @Keep
+  constructor(
+    val localIdentifier: String,
+    val width: Double,
+    val height: Double,
+    val mime: String,
+    val size: Double,
+    val bucketId: Double?,
+    val realPath: String?,
+    val parentFolderName: String?,
+    val creationDate: Double?,
+    val crop: Boolean?,
+    val path: String,
+    val type: ResultType,
+    val duration: Double?,
+    val thumbnail: String?,
+    val fileName: String?
+  ) {
+  /* main constructor */
+}

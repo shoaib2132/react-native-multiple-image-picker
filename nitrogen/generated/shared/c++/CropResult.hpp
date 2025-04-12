@@ -34,6 +34,7 @@ namespace margelo::nitro::multipleimagepicker {
     double height     SWIFT_PRIVATE;
 
   public:
+    CropResult() = default;
     explicit CropResult(std::string path, double width, double height): path(path), width(width), height(height) {}
   };
 
@@ -45,7 +46,7 @@ namespace margelo::nitro {
 
   // C++ CropResult <> JS CropResult (object)
   template <>
-  struct JSIConverter<CropResult> {
+  struct JSIConverter<CropResult> final {
     static inline CropResult fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return CropResult(

@@ -87,6 +87,7 @@ namespace margelo::nitro::multipleimagepicker {
     std::optional<PickerCameraConfig> camera     SWIFT_PRIVATE;
 
   public:
+    NitroConfig() = default;
     explicit NitroConfig(MediaType mediaType, std::vector<PickerResult> selectedAssets, SelectBoxStyle selectBoxStyle, SelectMode selectMode, std::optional<double> numberOfColumn, std::optional<bool> isPreview, std::optional<double> primaryColor, std::optional<bool> allowSwipeToSelect, std::optional<double> spacing, std::optional<bool> isHiddenPreviewButton, std::optional<bool> isHiddenOriginalButton, std::optional<bool> isShowPreviewList, std::optional<bool> allowHapticTouchPreview, std::optional<bool> allowedLimit, std::optional<double> maxVideo, std::optional<double> maxSelect, std::optional<double> maxVideoDuration, std::optional<double> minVideoDuration, std::optional<double> maxFileSize, std::optional<double> backgroundDark, std::optional<PickerCropConfig> crop, std::optional<Text> text, Language language, Theme theme, Presentation presentation, std::optional<PickerCameraConfig> camera): mediaType(mediaType), selectedAssets(selectedAssets), selectBoxStyle(selectBoxStyle), selectMode(selectMode), numberOfColumn(numberOfColumn), isPreview(isPreview), primaryColor(primaryColor), allowSwipeToSelect(allowSwipeToSelect), spacing(spacing), isHiddenPreviewButton(isHiddenPreviewButton), isHiddenOriginalButton(isHiddenOriginalButton), isShowPreviewList(isShowPreviewList), allowHapticTouchPreview(allowHapticTouchPreview), allowedLimit(allowedLimit), maxVideo(maxVideo), maxSelect(maxSelect), maxVideoDuration(maxVideoDuration), minVideoDuration(minVideoDuration), maxFileSize(maxFileSize), backgroundDark(backgroundDark), crop(crop), text(text), language(language), theme(theme), presentation(presentation), camera(camera) {}
   };
 
@@ -98,7 +99,7 @@ namespace margelo::nitro {
 
   // C++ NitroConfig <> JS NitroConfig (object)
   template <>
-  struct JSIConverter<NitroConfig> {
+  struct JSIConverter<NitroConfig> final {
     static inline NitroConfig fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return NitroConfig(

@@ -26,6 +26,7 @@ namespace margelo::nitro::multipleimagepicker {
      * Convert this Java/Kotlin-based enum to the C++ enum SelectBoxStyle.
      */
     [[maybe_unused]]
+    [[nodiscard]]
     SelectBoxStyle toCpp() const {
       static const auto clazz = javaClassStatic();
       static const auto fieldOrdinal = clazz->getField<int>("_ordinal");

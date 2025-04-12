@@ -41,7 +41,7 @@ namespace margelo::nitro {
 
   // C++ SelectBoxStyle <> JS SelectBoxStyle (union)
   template <>
-  struct JSIConverter<SelectBoxStyle> {
+  struct JSIConverter<SelectBoxStyle> final {
     static inline SelectBoxStyle fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       std::string unionValue = JSIConverter<std::string>::fromJSI(runtime, arg);
       switch (hashString(unionValue.c_str(), unionValue.size())) {

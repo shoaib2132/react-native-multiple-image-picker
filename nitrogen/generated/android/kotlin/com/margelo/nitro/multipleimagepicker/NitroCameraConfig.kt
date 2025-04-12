@@ -16,13 +16,18 @@ import com.margelo.nitro.core.*
  */
 @DoNotStrip
 @Keep
-data class NitroCameraConfig(
-  val mediaType: MediaType,
-  val presentation: Presentation,
-  val language: Language,
-  val crop: PickerCropConfig?,
-  val isSaveSystemAlbum: Boolean?,
-  val color: Double?,
-  val cameraDevice: CameraDevice?,
-  val videoMaximumDuration: Double?
-)
+data class NitroCameraConfig
+  @DoNotStrip
+  @Keep
+  constructor(
+    val mediaType: MediaType,
+    val presentation: Presentation,
+    val language: Language,
+    val crop: PickerCropConfig?,
+    val isSaveSystemAlbum: Boolean?,
+    val color: Double?,
+    val cameraDevice: CameraDevice?,
+    val videoMaximumDuration: Double?
+  ) {
+  /* main constructor */
+}

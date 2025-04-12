@@ -65,7 +65,7 @@ namespace margelo::nitro::multipleimagepicker {
       explicit HybridMultipleImagePickerSpec(): HybridObject(TAG) { }
 
       // Destructor
-      virtual ~HybridMultipleImagePickerSpec() { }
+      ~HybridMultipleImagePickerSpec() override = default;
 
     public:
       // Properties

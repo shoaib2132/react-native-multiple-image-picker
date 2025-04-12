@@ -41,7 +41,7 @@ namespace margelo::nitro {
 
   // C++ SelectMode <> JS SelectMode (union)
   template <>
-  struct JSIConverter<SelectMode> {
+  struct JSIConverter<SelectMode> final {
     static inline SelectMode fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       std::string unionValue = JSIConverter<std::string>::fromJSI(runtime, arg);
       switch (hashString(unionValue.c_str(), unionValue.size())) {

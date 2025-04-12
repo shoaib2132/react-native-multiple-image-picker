@@ -52,7 +52,7 @@ namespace margelo::nitro {
 
   // C++ Language <> JS Language (union)
   template <>
-  struct JSIConverter<Language> {
+  struct JSIConverter<Language> final {
     static inline Language fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       std::string unionValue = JSIConverter<std::string>::fromJSI(runtime, arg);
       switch (hashString(unionValue.c_str(), unionValue.size())) {

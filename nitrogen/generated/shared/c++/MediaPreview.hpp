@@ -38,6 +38,7 @@ namespace margelo::nitro::multipleimagepicker {
     std::optional<std::string> localIdentifier     SWIFT_PRIVATE;
 
   public:
+    MediaPreview() = default;
     explicit MediaPreview(ResultType type, std::optional<std::string> path, std::optional<std::string> thumbnail, std::optional<std::string> localIdentifier): type(type), path(path), thumbnail(thumbnail), localIdentifier(localIdentifier) {}
   };
 
@@ -49,7 +50,7 @@ namespace margelo::nitro {
 
   // C++ MediaPreview <> JS MediaPreview (object)
   template <>
-  struct JSIConverter<MediaPreview> {
+  struct JSIConverter<MediaPreview> final {
     static inline MediaPreview fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return MediaPreview(

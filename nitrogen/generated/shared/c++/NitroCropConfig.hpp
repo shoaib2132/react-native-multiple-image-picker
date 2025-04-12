@@ -46,6 +46,7 @@ namespace margelo::nitro::multipleimagepicker {
     std::optional<bool> freeStyle     SWIFT_PRIVATE;
 
   public:
+    NitroCropConfig() = default;
     explicit NitroCropConfig(Language language, Presentation presentation, std::optional<bool> circle, std::vector<CropRatio> ratio, std::optional<CropRatio> defaultRatio, std::optional<bool> freeStyle): language(language), presentation(presentation), circle(circle), ratio(ratio), defaultRatio(defaultRatio), freeStyle(freeStyle) {}
   };
 
@@ -57,7 +58,7 @@ namespace margelo::nitro {
 
   // C++ NitroCropConfig <> JS NitroCropConfig (object)
   template <>
-  struct JSIConverter<NitroCropConfig> {
+  struct JSIConverter<NitroCropConfig> final {
     static inline NitroCropConfig fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return NitroCropConfig(

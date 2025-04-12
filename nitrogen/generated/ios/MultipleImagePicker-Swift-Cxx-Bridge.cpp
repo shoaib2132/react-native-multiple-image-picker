@@ -57,7 +57,7 @@ namespace margelo::nitro::multipleimagepicker::bridge::swift {
       throw std::runtime_error("Class \"HybridMultipleImagePickerSpec\" is not implemented in Swift!");
     }
   #endif
-    MultipleImagePicker::HybridMultipleImagePickerSpec_cxx swiftPart = swiftWrapper->getSwiftPart();
+    MultipleImagePicker::HybridMultipleImagePickerSpec_cxx& swiftPart = swiftWrapper->getSwiftPart();
     return swiftPart.toUnsafe();
   }
 

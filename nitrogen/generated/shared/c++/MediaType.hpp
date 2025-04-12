@@ -42,7 +42,7 @@ namespace margelo::nitro {
 
   // C++ MediaType <> JS MediaType (union)
   template <>
-  struct JSIConverter<MediaType> {
+  struct JSIConverter<MediaType> final {
     static inline MediaType fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       std::string unionValue = JSIConverter<std::string>::fromJSI(runtime, arg);
       switch (hashString(unionValue.c_str(), unionValue.size())) {

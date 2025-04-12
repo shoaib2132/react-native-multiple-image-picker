@@ -53,6 +53,7 @@ namespace margelo::nitro::multipleimagepicker {
     std::optional<double> videoMaximumDuration     SWIFT_PRIVATE;
 
   public:
+    NitroCameraConfig() = default;
     explicit NitroCameraConfig(MediaType mediaType, Presentation presentation, Language language, std::optional<PickerCropConfig> crop, std::optional<bool> isSaveSystemAlbum, std::optional<double> color, std::optional<CameraDevice> cameraDevice, std::optional<double> videoMaximumDuration): mediaType(mediaType), presentation(presentation), language(language), crop(crop), isSaveSystemAlbum(isSaveSystemAlbum), color(color), cameraDevice(cameraDevice), videoMaximumDuration(videoMaximumDuration) {}
   };
 
@@ -64,7 +65,7 @@ namespace margelo::nitro {
 
   // C++ NitroCameraConfig <> JS NitroCameraConfig (object)
   template <>
-  struct JSIConverter<NitroCameraConfig> {
+  struct JSIConverter<NitroCameraConfig> final {
     static inline NitroCameraConfig fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return NitroCameraConfig(

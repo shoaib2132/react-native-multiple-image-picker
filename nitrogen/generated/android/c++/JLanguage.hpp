@@ -26,6 +26,7 @@ namespace margelo::nitro::multipleimagepicker {
      * Convert this Java/Kotlin-based enum to the C++ enum Language.
      */
     [[maybe_unused]]
+    [[nodiscard]]
     Language toCpp() const {
       static const auto clazz = javaClassStatic();
       static const auto fieldOrdinal = clazz->getField<int>("_ordinal");

@@ -101,7 +101,9 @@ namespace margelo::nitro::multipleimagepicker {
 
   public:
     // Get the Swift part
-    inline MultipleImagePicker::HybridMultipleImagePickerSpec_cxx getSwiftPart() noexcept { return _swiftPart; }
+    inline MultipleImagePicker::HybridMultipleImagePickerSpec_cxx& getSwiftPart() noexcept {
+      return _swiftPart;
+    }
 
   public:
     // Get memory pressure

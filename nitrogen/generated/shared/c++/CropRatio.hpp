@@ -35,6 +35,7 @@ namespace margelo::nitro::multipleimagepicker {
     double height     SWIFT_PRIVATE;
 
   public:
+    CropRatio() = default;
     explicit CropRatio(std::optional<std::string> title, double width, double height): title(title), width(width), height(height) {}
   };
 
@@ -46,7 +47,7 @@ namespace margelo::nitro {
 
   // C++ CropRatio <> JS CropRatio (object)
   template <>
-  struct JSIConverter<CropRatio> {
+  struct JSIConverter<CropRatio> final {
     static inline CropRatio fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
       return CropRatio(

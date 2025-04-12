@@ -16,7 +16,12 @@ import com.margelo.nitro.core.*
  */
 @DoNotStrip
 @Keep
-data class NitroPreviewConfig(
-  val language: Language,
-  val videoAutoPlay: Boolean?
-)
+data class NitroPreviewConfig
+  @DoNotStrip
+  @Keep
+  constructor(
+    val language: Language,
+    val videoAutoPlay: Boolean?
+  ) {
+  /* main constructor */
+}

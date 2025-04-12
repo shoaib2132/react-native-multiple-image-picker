@@ -16,8 +16,13 @@ import com.margelo.nitro.core.*
  */
 @DoNotStrip
 @Keep
-data class CropRatio(
-  val title: String?,
-  val width: Double,
-  val height: Double
-)
+data class CropRatio
+  @DoNotStrip
+  @Keep
+  constructor(
+    val title: String?,
+    val width: Double,
+    val height: Double
+  ) {
+  /* main constructor */
+}
