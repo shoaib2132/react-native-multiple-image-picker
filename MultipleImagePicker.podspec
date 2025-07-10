@@ -41,7 +41,6 @@ Pod::Spec.new do |s|
     s.dependency "React-Core"
     add_dependency(s, "React-jsinspector", :framework_name => "jsinspector_modern")
     add_dependency(s, "React-rendererconsistency", :framework_name => "React_rendererconsistency")
-    add_dependency(s, "React-jsinspectortracing", :framework_name => 'jsinspector_moderntracing')
   end
 
   load 'nitrogen/generated/ios/MultipleImagePicker+autolinking.rb'
