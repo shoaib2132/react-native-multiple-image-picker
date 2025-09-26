@@ -542,7 +542,7 @@ class MultipleImagePickerImp(reactContext: ReactApplicationContext?) :
 //        bottomBar.bottomEditorTextSize = Constant.TOOLBAR_TEXT_SIZE
 
         // MAIN STYLE
-        mainStyle.isCompleteSelectRelativeTop = false
+        mainStyle.isCompleteSelectRelativeTop = true
         mainStyle.isPreviewDisplaySelectGallery = true
         mainStyle.isAdapterItemIncludeEdge = true
         mainStyle.isPreviewSelectRelativeBottom = false
