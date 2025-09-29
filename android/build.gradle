@@ -125,8 +125,8 @@ dependencies {
     implementation 'com.github.bumptech.glide:glide:4.16.0'
     annotationProcessor 'com.github.bumptech.glide:compiler:4.16.0'
     // PictureSelector basic (Necessary)
-    // implementation 'io.github.lucksiege:pictureselector:v3.11.2'
-    implementation 'io.github.liyuhaolol:PictureChooser:1.0.6'
+    implementation 'io.github.lucksiege:pictureselector:v3.11.2'
+    // implementation 'io.github.liyuhaolol:PictureChooser:1.0.6'
 
 
     // image compress library (Not necessary)
