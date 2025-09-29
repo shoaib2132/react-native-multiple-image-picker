@@ -130,11 +130,12 @@ dependencies {
 
 
     // image compress library (Not necessary)
-    implementation 'io.github.lucksiege:compress:v3.11.2'
+    // implementation 'io.github.lucksiege:compress:v3.11.2'
+     implementation 'io.github.liyuhaolol:compress:v3.11.3'
 
     // uCrop library (Not necessary)
-    implementation 'io.github.lucksiege:ucrop:v3.11.2'
-    // implementation 'io.github.liyuhaolol:ucrop:v3.11.7'
+    // implementation 'io.github.lucksiege:ucrop:v3.11.2'
+    implementation 'io.github.liyuhaolol:ucrop:v3.11.6'
 
     // simple camerax library (Not necessary)
     //implementation 'io.github.lucksiege:camerax:v3.11.2'
