@@ -134,7 +134,8 @@ dependencies {
     implementation 'io.github.lucksiege:ucrop:v3.11.2'
 
     // simple camerax library (Not necessary)
-    implementation 'io.github.lucksiege:camerax:v3.11.5'
+    //implementation 'io.github.lucksiege:camerax:v3.11.2'
+    implementation 'io.github.liyuhaolol:camerax:v3.11.5'
 
     // exoplayer
     implementation "com.google.android.exoplayer:exoplayer:2.19.1"
